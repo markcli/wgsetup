@@ -7,7 +7,7 @@ set -euo pipefail
 ########################################
 
 WG_INTERFACE="wg0"
-WG_PORT="51820"
+WG_PORT="31689"
 
 WG_NETWORK="10.10.10.0/24"
 SERVER_WG_IP="10.10.10.1/24"
