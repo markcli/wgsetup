@@ -35,6 +35,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y \
     wireguard \
+    qrencode \
     nftables \
     curl
 
@@ -197,6 +198,8 @@ PersistentKeepalive = 25
 EOF
 
 chmod 600 "${CLIENT_CONFIG}"
+
+qrencode -t ANSIUTF8 -r "${CLIENT_CONFIG}"  | tee -a wgconf-qr.txt
 
 ########################################
 # Display Summary
