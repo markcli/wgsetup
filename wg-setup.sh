@@ -199,7 +199,7 @@ EOF
 
 chmod 600 "${CLIENT_CONFIG}"
 
-qrencode -t ANSIUTF8 -r "${CLIENT_CONFIG}"  | tee -a wgconf-qr.txt
+qrencode -t ANSIUTF8 -r "${CLIENT_CONFIG}"  | tee -a /root/wgconf-qr.txt
 
 ########################################
 # Display Summary
