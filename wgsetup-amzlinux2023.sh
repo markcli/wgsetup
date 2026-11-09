@@ -154,7 +154,7 @@ cat > /etc/sysctl.d/99-wireguard.conf <<EOF
 net.ipv4.ip_forward = 1
 EOF
 
-sysctl --system
+sysctl -p /etc/sysctl.d/99-wireguard.conf
 
 # ==================================================
 # Configure WireGuard server
@@ -208,6 +208,8 @@ PersistentKeepalive = 25
 EOF
 
 chmod 600 "${WG_DIR}/${CLIENT_NAME}.conf"
+
+qrencode -t ANSIUTF8 -r "${WG_DIR}/${CLIENT_NAME}.conf"  | tee -a /root/wgconf-qr.txt
 
 # ==================================================
 # Start WireGuard
